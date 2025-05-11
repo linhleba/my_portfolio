@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ExternalLink, Github, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -61,12 +60,12 @@ const Projects = () => {
   const [displayMode, setDisplayMode] = useState<'featured' | 'github'>('featured');
   const { toast } = useToast();
   
-  // Replace 'yourusername' with your actual GitHub username
+  // Replace with your actual GitHub username
   const githubUsername = 'yourusername';
   const { data: githubRepos, isLoading, error } = useGithubRepos(githubUsername);
   
   // Show error toast if GitHub fetch fails
-  React.useEffect(() => {
+  useEffect(() => {
     if (error) {
       toast({
         title: "Error",
@@ -78,7 +77,7 @@ const Projects = () => {
   }, [error, toast]);
 
   return (
-    <section id="projects" className="bg-gray-50 py-24">
+    <section id="projects" className="bg-gray-50 py-24 scroll-mt-16">
       <div className="section-container">
         <h2 className="section-title">My Recent Work</h2>
         <p className="section-subtitle">

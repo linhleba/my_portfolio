@@ -4,8 +4,16 @@ import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
+  const scrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="bg-white pt-16 pb-24 md:pt-24 md:pb-32">
+    <section className="bg-white pt-16 pb-24 md:pt-24 md:pb-32 relative">
       <div className="section-container">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -22,12 +30,13 @@ const Hero = () => {
             />
           </div>
           <div className="mt-10">
-            <a href="#projects">
-              <Button className="group btn-primary flex items-center gap-2">
-                View my work
-                <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
-              </Button>
-            </a>
+            <Button 
+              className="group btn-primary flex items-center gap-2"
+              onClick={scrollToProjects}
+            >
+              View my work
+              <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </div>
