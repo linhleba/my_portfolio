@@ -25,7 +25,7 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div>
-            <a href="#" className="text-xl sm:text-2xl font-bold text-primary">Your Name</a>
+            <a href="#" className="text-xl sm:text-2xl font-bold text-primary">Linh Le Ba</a>
           </div>
           
           {/* Desktop Navigation */}

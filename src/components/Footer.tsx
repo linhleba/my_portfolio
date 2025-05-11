@@ -37,7 +37,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-muted-foreground text-sm">
-            Designed and built with ❤️ by Your Name © {new Date().getFullYear()}
+            Designed and built with ❤️ by Linh Le Ba © {new Date().getFullYear()}
           </p>
         </div>
       </div>

@@ -25,11 +25,9 @@ const About = () => {
   return (
     <section id="about" className="bg-gray-50 py-16 sm:py-20 md:py-24 lg:py-32">
       <div className="section-container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Hi, I'm Your Name. Nice to meet you.</h2>
+        <h2 className="section-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Hi, I'm Linh</h2>
         <p className="section-subtitle text-lg sm:text-xl md:text-2xl max-w-5xl mx-auto">
-          Based in San Francisco, I'm a front-end developer passionate about building 
-          accessible web apps that users love. I specialize in creating digital experiences 
-          that are both functional and beautiful.
+        Innovative web developer with over 3 years of experience in NextJS, ReactJS, and Angular and specialize in creating responsive, high-performance web applications.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 md:mt-16">
