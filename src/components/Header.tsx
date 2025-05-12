@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { X, Menu } from 'lucide-react';
+import { X, Menu, FileText } from 'lucide-react';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,21 +20,36 @@ const Header = () => {
     }
   };
 
+  const openResume = () => {
+    window.open('https://example.com/resume.pdf', '_blank');
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div>
-            <a href="#" className="text-xl sm:text-2xl font-bold text-primary">Linh Le Ba</a>
+            <button 
+              onClick={() => scrollToSection('hero')} 
+              className="text-xl sm:text-2xl font-bold text-primary"
+            >
+              Linh Le Ba
+            </button>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-primary font-medium">About</button>
             <button onClick={() => scrollToSection('skills')} className="text-gray-700 hover:text-primary font-medium">Skills</button>
+            <button onClick={() => scrollToSection('languages')} className="text-gray-700 hover:text-primary font-medium">Languages</button>
+            <button onClick={() => scrollToSection('certifications')} className="text-gray-700 hover:text-primary font-medium">Certifications</button>
+            <button onClick={() => scrollToSection('experience')} className="text-gray-700 hover:text-primary font-medium">Experience</button>
             <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-primary font-medium">Projects</button>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-primary font-medium">Contact</button>
-            <Button variant="outline">Resume</Button>
+            <Button variant="outline" onClick={openResume} className="flex items-center gap-2">
+              <FileText size={16} />
+              Resume
+            </Button>
           </nav>
           
           {/* Mobile Menu Button */}
@@ -55,10 +70,16 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <button onClick={() => scrollToSection('about')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">About</button>
               <button onClick={() => scrollToSection('skills')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">Skills</button>
+              <button onClick={() => scrollToSection('languages')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">Languages</button>
+              <button onClick={() => scrollToSection('certifications')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">Certifications</button>
+              <button onClick={() => scrollToSection('experience')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">Experience</button>
               <button onClick={() => scrollToSection('projects')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">Projects</button>
               <button onClick={() => scrollToSection('contact')} className="px-4 py-2 text-gray-700 hover:text-primary font-medium">Contact</button>
               <div className="px-4 py-2">
-                <Button variant="outline" className="w-full">Resume</Button>
+                <Button variant="outline" onClick={openResume} className="w-full flex items-center justify-center gap-2">
+                  <FileText size={16} />
+                  Resume
+                </Button>
               </div>
             </div>
           </div>

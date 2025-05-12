@@ -11,6 +11,7 @@ const Experience = () => {
       company: 'Tech Corp',
       location: 'Hanoi',
       period: 'Jan 2023–Present',
+      description: 'Building modern web applications focused on user experience and performance optimization for enterprise clients.',
       achievements: [
         'Built responsive interfaces with React/Tailwind CSS.',
         'Integrated MySQL APIs.',
@@ -19,10 +20,35 @@ const Experience = () => {
       current: true
     },
     {
+      position: 'UI Developer',
+      company: 'MedTech Solutions',
+      location: 'Hanoi',
+      period: 'Jun 2022–Dec 2022',
+      description: 'Healthcare web application designed to streamline clinical trial data reporting and analysis, enabling efficient data management for informed decision-making in the pharmaceutical industry.',
+      achievements: [
+        'Built responsive UI with React and Material-UI.',
+        'Optimized data visualization components.'
+      ],
+      current: false
+    },
+    {
+      position: 'Web Developer',
+      company: 'EduPlatform',
+      location: 'Ho Chi Minh City',
+      period: 'Jan 2021–May 2022',
+      description: 'Educational platform for online learning, improving student engagement through interactive dashboards and real-time analytics.',
+      achievements: [
+        'Developed front-end with Vue.js and Bootstrap.',
+        'Integrated REST APIs for course content.'
+      ],
+      current: false
+    },
+    {
       position: 'Junior Developer',
       company: 'Startup Inc',
       location: 'Ho Chi Minh City',
       period: 'Jun 2021–Dec 2022',
+      description: 'Worked on an early-stage startup focused on developing consumer mobile applications and responsive web interfaces.',
       achievements: [
         'Built UI with JavaScript/Bootstrap.',
         'Conducted user testing.'
@@ -61,6 +87,10 @@ const Experience = () => {
                       )}
                     </div>
                   </div>
+                  
+                  {exp.description && (
+                    <p className="text-muted-foreground mb-4 text-sm md:text-base">{exp.description}</p>
+                  )}
                   
                   <ul className="space-y-2 mt-4">
                     {exp.achievements.map((achievement, achievementIndex) => (

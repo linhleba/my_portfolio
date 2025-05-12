@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, FileText } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = (e: React.MouseEvent) => {
@@ -12,8 +12,12 @@ const Hero = () => {
     }
   };
 
+  const openResume = () => {
+    window.open('https://example.com/resume.pdf', '_blank');
+  };
+
   return (
-    <section className="bg-white pt-16 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40 relative">
+    <section id="hero" className="bg-white pt-16 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40 relative">
       <div className="section-container max-w-screen-xl">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight">
@@ -29,13 +33,22 @@ const Hero = () => {
               className="w-full h-full object-contain" 
             />
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button 
               className="group btn-primary flex items-center gap-2 text-base md:text-lg py-6 px-8"
               onClick={scrollToProjects}
             >
               View my work
               <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
+            </Button>
+            
+            <Button 
+              className="group btn-outline flex items-center gap-2 text-base md:text-lg py-6 px-8"
+              variant="outline"
+              onClick={openResume}
+            >
+              Resume
+              <FileText size={20} className="group-hover:scale-110 transition-transform" />
             </Button>
           </div>
         </div>
