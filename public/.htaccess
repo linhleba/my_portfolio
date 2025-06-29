@@ -4,6 +4,15 @@ AddType application/javascript .js
 AddType application/javascript .mjs
 AddType text/css .css
 
+# Force correct MIME types for common files
+<FilesMatch "\.(js|mjs)$">
+    ForceType application/javascript
+</FilesMatch>
+
+<FilesMatch "\.css$">
+    ForceType text/css
+</FilesMatch>
+
 # Enable gzip compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
