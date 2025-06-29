@@ -4,10 +4,25 @@
   X-Content-Type-Options: nosniff
 
 /*.js
-  Content-Type: application/javascript
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
 
 /*.mjs
-  Content-Type: application/javascript
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
 
 /*.css
-  Content-Type: text/css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000
+
+/assets/*.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
+
+/assets/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000
+
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000
